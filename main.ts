@@ -19,12 +19,14 @@ input.onButtonPressed(Button.A, function () {
     )
     if (objectDistance <= 10) {
         radio.sendString("Too close!")
+        basic.pause(750)
+        basic.showIcon(IconNames.Happy)
     }
-    basic.pause (750)
 })
 
 radio.onReceivedString(function (receivedString) {
     basic.clearScreen()
     basic.showString(receivedString)
+    basic.pause(750)
     basic.showIcon(IconNames.Happy)
 })
