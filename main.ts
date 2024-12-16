@@ -9,6 +9,7 @@ basic.showIcon(IconNames.Happy)
 radio.setGroup(1)
 let objectDistance = 0
 
+
 //getting distance from sonar
 input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
@@ -19,6 +20,10 @@ input.onButtonPressed(Button.A, function () {
     )
     if (objectDistance <= 10) {
         radio.sendString("Too close!")
+        basic.pause(750)
+        basic.showIcon(IconNames.Happy)
+    } else{
+        radio.sendString("Perfect!")
         basic.pause(750)
         basic.showIcon(IconNames.Happy)
     }
